@@ -1,122 +1,259 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Vision Pro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Vision Pro - Apple (IT)</title>
+  <link rel="icon" href="apple_vision_foto/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+    .hero-image,
+    .reveal img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+    
+    .navbar.fixed-top {
+      background-color: #ffffff;
+      z-index: 9999;
+    }
+    body {
+      padding-top: 70px;
+    }
+    @media (max-width: 992px) {
+      body {
+        padding-top: 80px;
+      }
+      .navbar-collapse {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    .hero-section {
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="logor.png" alt="Apple" width="40" height="40">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#caratteristiche">Caratteristiche</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#prezzi">Prezzi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#supporto">Supporto</a>
-                    </li>
-                </ul>
-            </div>
+  <nav class="navbar navbar-expand-lg fixed-top apple-nav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="apple_vision_foto/logo_pro.png" alt="Apple Logo" loading="lazy">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#hero">Vision Pro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#intro">Cos'è</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#design">Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#visionos">visionOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#caratteristiche">Tecnologia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#prezzi">Acquista</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#supporto">Supporto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero-section text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1 class="hero-title display-3 mb-3 reveal">Apple Vision Pro</h1>
+      <p class="hero-subtitle lead mb-4 reveal reveal-delay-1">Benvenuti nell'era dello spatial computing.</p>
+      <div class="hero-cta reveal reveal-delay-2">
+        <a href="#intro" class="btn btn-apple-primary btn-lg me-2">Scopri di più</a>
+        <a href="#prezzi" class="btn btn-apple-secondary btn-lg">Guarda i prezzi</a>
+      </div>
+      <div class="hero-image-container mt-5 reveal reveal-delay-3">
+        <img src="apple_vision_foto/Apple_vision.png" alt="Apple Vision Pro in uso" class="img-fluid hero-image" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="intro" class="py-5 text-center bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="section-title mb-4 reveal">Il tuo mondo. Infinitamente più grande.</h2>
+          <p class="section-text lead mb-5 reveal reveal-delay-1">
+            Apple Vision Pro fonde perfettamente i contenuti digitali con il tuo spazio fisico. Navighi usando gli occhi, le mani e la voce. È il primo computer spaziale di Apple.
+          </p>
+          <div class="reveal reveal-delay-2">
+            <video class="img-fluid rounded shadow-sm mb-4" controls preload="metadata" loading="lazy" style="max-width: 100%;">
+              <source src="apple_vision_foto/large (1).mp4" type="video/mp4">
+              Il tuo browser non supporta il tag video.
+            </video>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <section class="hero text-center py-5">
-        <div class="container">
-            <h1 class="display-4 text-white mb-4 animate__animated animate__fadeInDown">Apple Vision Pro</h1>
-            <p class="lead text-white mb-4 animate__animated animate__fadeIn animate__delay-1s">L'esperienza del futuro in una realtà aumentata senza pari.</p>
-            <a href="#caratteristiche" class="btn btn-primary btn-lg animate__animated animate__zoomIn animate__delay-2s">Scopri di più</a>
-            <div class="hero-image animate__animated animate__zoomIn animate__delay-3s">
-                <img src="Apple_vision.png" alt="Apple Vision Pro" class="img-fluid mt-5" style="max-width: 80%; border-radius: 15px;">
-            </div>
+  <section id="design" class="py-5 text-center bg-dark text-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="section-title mb-4 reveal">Design rivoluzionario.</h2>
+          <p class="section-text lead mb-5 reveal reveal-delay-1">
+            Un unico pezzo di vetro laminato tridimensionale si fonde con un telaio in lega di alluminio che curva per avvolgere il viso. Materiali eccezionali, progettati per prestazioni, comfort e vestibilità.
+          </p>
+          <div class="reveal reveal-delay-2">
+            <img src="apple_vision_foto/pht1.jpg" alt="Dettaglio design Apple Vision Pro" class="img-fluid rounded mb-4" loading="lazy">
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="caratteristiche" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="mb-5">Caratteristiche Esclusive</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeInLeft animate__delay-1s">
-                        <h3>Immersione Totale</h3>
-                        <p>Vivi in un mondo completamente nuovo con il più potente visore AR.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeIn animate__delay-1.5s">
-                        <h3>Design Elegante</h3>
-                        <p>Progettato per adattarsi perfettamente alla tua vita quotidiana, con uno stile sofisticato.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeInRight animate__delay-2s">
-                        <h3>Performance Incredibile</h3>
-                        <p>Processore all'avanguardia per prestazioni senza compromessi, in ogni situazione.</p>
-                    </div>
-                </div>
-            </div>
+  <section id="visionos" class="py-5 text-center bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="section-title mb-4 reveal">Progettato per lo spatial computing.<br>Ecco visionOS.</h2>
+          <p class="section-text lead mb-5 reveal reveal-delay-1">
+            Basato su macOS, iOS e iPadOS, visionOS offre potenti esperienze spaziali. Controlla Apple Vision Pro con occhi, mani e voce: l'interazione è intuitiva e magica.
+          </p>
+          <div class="reveal reveal-delay-2">
+            <img src="apple_vision_foto/pht2.jpg" alt="Interfaccia visionOS" class="img-fluid rounded shadow-sm mb-4" loading="lazy">
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="prezzi" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">Scegli il tuo modello</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="price-card">
-                        <h3>Modello Base</h3>
-                        <p>€3,499</p>
-                        <a href="#" class="btn btn-primary">Acquista ora</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="price-card">
-                        <h3>Modello Pro</h3>
-                        <p>€3,999</p>
-                        <a href="#" class="btn btn-primary">Acquista ora</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="price-card">
-                        <h3>Modello Max</h3>
-                        <p>€4,499</p>
-                        <a href="#" class="btn btn-primary">Acquista ora</a>
-                    </div>
-                </div>
-            </div>
+  <section id="caratteristiche" class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-5 reveal">Tecnologia all'avanguardia.</h2>
+      <div class="row">
+        <div class="col-md-4 reveal">
+          <div class="feature-card border-0">
+            <img src="apple_vision_foto/pht3.jpg" alt="Icona Display" height="60" class="mb-3" loading="lazy">
+            <h3 class="feature-title">Display Micro-OLED</h3>
+            <p class="feature-text">Due display ad altissima risoluzione con 23 milioni di pixel offrono un'esperienza visiva sbalorditiva.</p>
+          </div>
         </div>
-    </section>
-
-    <section id="supporto" class="py-5 bg-dark text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">Hai bisogno di aiuto?</h2>
-            <p class="lead">Contatta il nostro supporto per qualsiasi problema.</p>
-            <a href="#" class="btn btn-light">Contatta il Supporto</a>
+        <div class="col-md-4 reveal reveal-delay-1">
+          <div class="feature-card border-0">
+            <img src="apple_vision_foto/chip_pro.jpg" alt="Icona Chip" height="60" class="mb-3" loading="lazy">
+            <h3 class="feature-title">Doppio Chip Potente</h3>
+            <p class="feature-text">Il chip M2 garantisce prestazioni incredibili, mentre il nuovo chip R1 elabora l'input da sensori, camere e microfoni.</p>
+          </div>
         </div>
-    </section>
+        <div class="col-md-4 reveal reveal-delay-2">
+          <div class="feature-card border-0">
+            <img src="apple_vision_foto/pht4.png" alt="Icona Audio" height="60" class="mb-3" loading="lazy">
+            <h3 class="feature-title">Audio Spaziale Avanzato</h3>
+            <p class="feature-text">I pod audio posizionati vicino alle orecchie offrono un suono ricco e spaziale, mantenendoti consapevole dell'ambiente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="bg-dark text-white py-4 text-center">
-        <p>&copy; 2025 Apple Inc. All rights reserved.</p>
-    </footer>
+  <section id="prezzi" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="section-title mb-5 reveal">Trova il Vision Pro giusto per te.</h2>
+      <p class="section-text lead mb-5 reveal reveal-delay-1">A partire da $3,499 (US). Disponibilità in altri paesi prossimamente.</p>
+      <div class="row justify-content-center">
+        <div class="col-md-4 reveal">
+          <div class="price-card">
+            <h3 class="price-title">Apple Vision Pro</h3>
+            <p class="price-storage">256GB</p>
+            <p class="price-tag">€ 3.999*</p>
+            <a href="#" class="btn btn-apple-primary mt-3">Acquista</a>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-1">
+          <div class="price-card">
+            <h3 class="price-title">Apple Vision Pro</h3>
+            <p class="price-storage">512GB</p>
+            <p class="price-tag">€ 4.249*</p>
+            <a href="#" class="btn btn-apple-primary mt-3">Acquista</a>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-2">
+          <div class="price-card">
+            <h3 class="price-title">Apple Vision Pro</h3>
+            <p class="price-storage">1TB</p>
+            <p class="price-tag">€ 4.499*</p>
+            <a href="#" class="btn btn-apple-primary mt-3">Acquista</a>
+          </div>
+        </div>
+      </div>
+      <p class="text-muted mt-4">*Prezzi indicativi basati sul mercato USA e conversione. Attendere comunicazioni ufficiali Apple per l'Italia.</p>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+  <section id="supporto" class="py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="section-title mb-4 reveal">Hai bisogno di aiuto?</h2>
+      <p class="lead mb-4 reveal reveal-delay-1">Il supporto Apple è qui per te. Trova risposte, chiedi aiuto e scopri di più.</p>
+      <a href="https://support.apple.com/it-it" target="_blank" class="btn btn-light reveal reveal-delay-2">Visita il Supporto Apple</a>
+    </div>
+  </section>
+
+  <footer class="apple-footer py-5 text-center">
+    <div class="container">
+      <p class="footer-text">&copy; <span id="copyright-year"></span> Apple Inc. Tutti i diritti riservati.</p>
+      <ul class="list-inline footer-links">
+        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        <li class="list-inline-item"><a href="#">Termini di utilizzo</a></li>
+        <li class="list-inline-item"><a href="#">Note legali</a></li>
+        <li class="list-inline-item"><a href="#">Mappa del sito</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
