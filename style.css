@@ -1,7 +1,5 @@
-/* --- Variabili Colore e Font --- */
 :root {
     --apple-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    /* Fallback se SF Pro non è installato */
     --fallback-font-family: 'Inter', sans-serif;
 
     --apple-black: #1d1d1f;
@@ -9,26 +7,31 @@
     --apple-off-white: #f5f5f7;
     --apple-gray: #6e6e73;
     --apple-light-gray: #a1a1a6;
-    --apple-blue: #007aff; /* Blu Apple standard */
-    --apple-dark-gray: #333333; /* Per sfondi scuri */
+    --apple-blue: #007aff;
+    --apple-dark-gray: #333333;
 
-    --nav-height: 56px; /* Altezza Navbar */
+    --nav-height: 56px;
 }
 
-/* --- Stili Globali --- */
+html {
+    scroll-behavior: smooth; /* Abilita lo smooth scrolling */
+}
+
 body {
     font-family: var(--apple-font-family, var(--fallback-font-family));
     background-color: var(--apple-white);
     color: var(--apple-black);
     margin: 0;
-    padding-top: var(--nav-height); /* Spazio per la navbar fissa */
+    padding-top: var(--nav-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Previene scroll orizzontale accidentale */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; /* Semibold per i titoli */
+    font-weight: 600;
     color: var(--apple-black);
+    letter-spacing: -0.01em;
 }
 
 p {
@@ -46,231 +49,258 @@ a:hover {
 }
 
 section {
-    padding: 6rem 0; /* Ampia spaziatura verticale */
+    padding: 5rem 0; /* Leggera riduzione padding */
 }
 
 .bg-light {
-     background-color: var(--apple-off-white) !important; /* Usa il grigio chiaro Apple */
+    background-color: var(--apple-off-white) !important;
 }
 
 .bg-dark {
-    background-color: var(--apple-black) !important; /* Usa il nero/grigio scuro Apple */
+    background-color: var(--apple-black) !important;
 }
 
-.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark p {
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6 {
     color: var(--apple-white);
 }
+
 .bg-dark p {
-     color: var(--apple-light-gray); /* Grigio più chiaro per il testo su sfondo scuro */
+    color: var(--apple-light-gray);
 }
+.bg-dark .feature-text {
+     color: var(--apple-light-gray);
+}
+
 
 /* --- Navbar --- */
 .apple-nav {
-    background-color: rgba(255, 255, 255, 0.8); /* Sfondo semi-trasparente iniziale */
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    transition: background-color 0.5s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     height: var(--nav-height);
+    z-index: 1030; /* Assicura sia sopra altri elementi */
 }
 
 .apple-nav.scrolled {
-    background-color: rgba(245, 245, 247, 0.95); /* Sfondo più opaco allo scroll */
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(245, 245, 247, 0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-brand img {
+    height: 28px; /* Leggermente più piccolo per raffinatezza */
+    width: auto;
     vertical-align: middle;
 }
 
 .navbar-nav .nav-link {
     color: var(--apple-black);
-    font-weight: 400; /* Regular weight */
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-weight: 400;
+    font-size: 0.85rem; /* Leggermente più piccolo */
+    padding: 0.5rem 0.8rem;
     transition: color 0.2s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--apple-blue);
-    /* background-color: rgba(0, 122, 255, 0.1); /* Leggero sfondo su hover/active - Opzionale */
-    /* border-radius: 5px; */
 }
 
 .navbar-toggler {
     border: none;
+    padding: 0.25rem 0.5rem;
 }
 .navbar-toggler:focus {
     box-shadow: none;
 }
+.navbar-toggler-icon {
+     width: 1.2em; /* Icona leggermente più piccola */
+     height: 1.2em;
+}
+
 
 /* --- Hero Section --- */
 .hero-section {
-    min-height: calc(100vh - var(--nav-height)); /* Altezza schermo meno navbar */
-    background-color: var(--apple-white); /* Sfondo chiaro di default */
-    /* background: url('placeholder-hero-bg.jpg') no-repeat center center; */ /* Opzione: Sfondo immagine */
-    /* background-size: cover; */
-    padding-top: 4rem;
+    min-height: calc(90vh - var(--nav-height)); /* Altezza leggermente ridotta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
     padding-bottom: 4rem;
-    color: var(--apple-black); /* Testo nero su sfondo chiaro */
+    color: var(--apple-black);
 }
 
 .hero-title {
-    font-size: 4rem; /* Titolo molto grande */
-    font-weight: 700; /* Bold */
-    letter-spacing: -1px;
-    color: var(--apple-black); /* Assicura colore nero */
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--apple-black);
 }
 
 .hero-subtitle {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    color: var(--apple-gray); /* Grigio per sottotitolo */
-    max-width: 600px;
+    color: var(--apple-gray);
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hero-image-container {
-    max-width: 800px; /* Limita larghezza immagine */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hero-image {
-     border-radius: 18px; /* Angoli arrotondati */
-     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Ombra leggera */
+    max-width: 800px; /* Aumenta la larghezza massima */
+    height: auto;
+    border-radius: 18px;
+    margin: 0 auto; /* Centra l'immagine */
+    padding: 0;
 }
 
 
 /* --- Bottoni Stile Apple --- */
+.btn-apple-primary, .btn-apple-secondary {
+    border-radius: 980px;
+    padding: 12px 28px; /* Padding leggermente aumentato */
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease, border-color 0.2s ease;
+    display: inline-block; /* Assicura corretto allineamento e padding */
+}
+
 .btn-apple-primary {
     background-color: var(--apple-blue);
     color: var(--apple-white);
-    border: none;
-    border-radius: 980px; /* Arrotondamento stile Apple */
-    padding: 10px 24px;
-    font-weight: 500; /* Medium weight */
-    font-size: 1rem;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: 1px solid transparent; /* Bordo per coerenza dimensioni */
 }
 
 .btn-apple-primary:hover {
-    background-color: #006adc; /* Blu leggermente più scuro */
+    background-color: #0070d1; /* Blu Apple più scuro per hover */
     color: var(--apple-white);
     text-decoration: none;
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .btn-apple-secondary {
     background-color: var(--apple-off-white);
     color: var(--apple-blue);
     border: 1px solid var(--apple-light-gray);
-    border-radius: 980px;
-    padding: 10px 24px;
-    font-weight: 500;
-    font-size: 1rem;
-     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-apple-secondary:hover {
     background-color: #e8e8ed;
+    border-color: var(--apple-gray);
     color: var(--apple-blue);
-     text-decoration: none;
-    transform: scale(1.02);
+    text-decoration: none;
+    transform: scale(1.03);
 }
 
 /* --- Stili Sezioni Generiche --- */
 .section-title {
-    font-size: 2.8rem; /* Titoli sezione più grandi */
+    font-size: 2.6rem;
     font-weight: 700;
-     margin-bottom: 1.5rem;
-     letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.015em;
 }
 
 .section-text {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 400;
     color: var(--apple-gray);
-     max-width: 700px; /* Limita larghezza testo */
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
+
 .bg-dark .section-text {
-    color: var(--apple-light-gray); /* Testo più chiaro su sfondo scuro */
+    color: var(--apple-light-gray);
 }
+
 
 /* --- Feature Cards --- */
 .feature-card {
-    background-color: transparent; /* Nessuno sfondo esplicito per integrarsi meglio con la sezione */
-    padding: 20px;
+    background-color: transparent;
+    padding: 15px;
     text-align: center;
-     border: none; /* Rimuovi bordi espliciti */
-     margin-bottom: 30px;
+    border: none;
 }
-
+.feature-icon {
+    max-height: 80px; /* Altezza massima icone */
+    width: auto;
+    object-fit: contain;
+}
 .feature-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: inherit; /* Eredita colore dalla sezione (nero o bianco) */
+    color: inherit;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
 
 .feature-text {
-    font-size: 1rem;
-    color: var(--apple-gray); /* Grigio standard per testo */
+    font-size: 0.95rem; /* Testo feature leggermente più piccolo */
 }
-.bg-dark .feature-text {
-     color: var(--apple-light-gray); /* Grigio più chiaro su scuro */
-}
+
 
 /* --- Price Cards --- */
 .price-card {
     background-color: var(--apple-white);
-    padding: 35px 25px;
-    border-radius: 18px; /* Arrotondamento maggiore */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Ombra molto leggera */
-    margin-bottom: 30px;
+    padding: 30px 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Assicura altezza uguale con flex */
+    display: flex; /* Abilita flexbox per allineare bottone */
+    flex-direction: column; /* Contenuto in colonna */
+}
+.price-card > div:first-child {
+     flex-grow: 1; /* Fa espandere il contenuto per spingere bottone in basso */
 }
 
 .price-card:hover {
-    transform: translateY(-5px); /* Leggero sollevamento */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
 }
 
 .price-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .price-storage {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--apple-gray);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .price-tag {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--apple-black); /* Prezzo in nero */
-    margin-bottom: 20px;
+    color: var(--apple-black);
+    margin-bottom: 25px;
+}
+.price-card .btn-apple-primary {
+    margin-top: auto; /* Spinge il bottone in fondo alla card */
 }
 
 /* --- Footer --- */
 .apple-footer {
     background-color: var(--apple-off-white);
     color: var(--apple-gray);
-    font-size: 0.8rem;
+    font-size: 0.78rem; /* Testo footer più piccolo */
+    border-top: 1px solid #ddd;
 }
 
 .footer-text {
-    margin-bottom: 1rem;
-    color: var(--apple-black); /* Testo copyright più scuro */
-     font-weight: 500;
+    margin-bottom: 0.8rem;
+    color: var(--apple-black);
+    font-weight: 500;
 }
 
 .footer-links {
@@ -279,7 +309,7 @@ section {
 }
 
 .footer-links li {
-    margin: 0 10px;
+    margin: 0 8px;
 }
 
 .footer-links a {
@@ -293,11 +323,12 @@ section {
 }
 
 
-/* --- Animazioni su Scroll (Intersection Observer) --- */
+/* --- Animazioni su Scroll --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: translateY(35px);
+    transition: opacity 0.9s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.9s cubic-bezier(0.215, 0.610, 0.355, 1);
+    will-change: opacity, transform; /* Hint per performance */
 }
 
 .reveal.reveal-visible {
@@ -305,41 +336,196 @@ section {
     transform: translateY(0);
 }
 
-/* Ritardi per animazioni sequenziali */
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
-.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-    .hero-title { font-size: 3.5rem; }
-    .hero-subtitle { font-size: 1.5rem; }
-    .section-title { font-size: 2.5rem; }
+@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.4rem; }
+    .section-title { font-size: 2.2rem; }
     .section-text { font-size: 1.1rem; }
     section { padding: 4rem 0; }
-    .navbar-nav { /* Centro i link anche su mobile quando espanso */
+    .navbar-collapse {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--apple-off-white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0; /* Padding interno per menu mobile */
+    }
+     .navbar-nav {
         text-align: center;
-        margin-top: 1rem;
+     }
+     .navbar-nav .nav-item {
+        margin-bottom: 0.5rem; /* Spazio tra link mobile */
+     }
+     .navbar-nav.ms-auto { /* Rimuovi margine auto su mobile */
+         margin-left: auto !important;
+         margin-right: auto !important;
+         margin-top: 1rem; /* Spazio prima del bottone Supporto */
+     }
+}
+
+@media (max-width: 767.98px) { /* Bootstrap md breakpoint */
+    body { padding-top: var(--nav-height); }
+    .hero-title { font-size: 2.4rem; letter-spacing: -0.01em;}
+    .hero-subtitle { font-size: 1.15rem; }
+    .section-title { font-size: 1.9rem; }
+    .section-text { font-size: 1rem; }
+    .feature-card, .price-card {
+        margin-bottom: 25px;
+    }
+    .hero-cta .btn {
+        display: block;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 280px;
+        width: 80%; /* Larghezza maggiore su mobile */
+    }
+    .hero-cta .btn-lg.me-md-2 {
+        margin-right: auto !important;
+    }
+    .price-card {
+        padding: 25px 20px;
+    }
+    .footer-links li {
+        display: block; /* Link footer uno sotto l'altro */
+        margin-bottom: 5px;
     }
 }
 
-@media (max-width: 768px) {
-     body { padding-top: var(--nav-height); } /* Riconferma padding */
-    .hero-title { font-size: 2.8rem; }
-    .hero-subtitle { font-size: 1.25rem; }
-    .section-title { font-size: 2rem; }
-     .feature-card, .price-card {
-         margin-bottom: 20px; /* Riduci spazio tra card su mobile */
-     }
-     .hero-cta .btn {
-         display: block; /* Bottoni uno sotto l'altro */
-         margin-bottom: 10px;
-         margin-left: auto;
-         margin-right: auto;
-         max-width: 250px; /* Limita larghezza bottone */
-     }
-      .hero-cta .btn-lg.me-2 {
-         margin-right: auto !important; /* Sovrascrivi margine destro */
-      }
+/* --- Stili Pagina Specifiche --- */
+
+.specs-page .specs-hero {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.specs-page .specs-hero h1 {
+    color: var(--apple-black); /* Assicurati che sia nero su sfondo chiaro */
+}
+
+.specs-page section {
+    padding: 4rem 0; /* Padding leggermente ridotto per le sezioni spec */
+}
+
+/* Stile per le liste di specifiche */
+.spec-list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; /* Rimuovi bullet point */
+}
+
+.spec-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e8e8ed; /* Sottile divisore */
+    font-size: 1rem;
+    color: var(--apple-gray);
+}
+
+.spec-list li:last-child {
+    border-bottom: none; /* Rimuovi bordo dall'ultimo elemento */
+}
+
+.spec-label {
+    font-weight: 600; /* Semibold per l'etichetta */
+    color: var(--apple-black);
+    margin-right: 0.5em;
+    display: inline-block; /* Permette margine */
+    min-width: 120px; /* Larghezza minima per allineamento (opzionale) */
+}
+
+.bg-light .spec-list li {
+    border-color: #dcdcdc; /* Bordo leggermente più visibile su bg-light */
+}
+
+.bg-dark .spec-list li { /* Se usi sezioni scure per le spec */
+    border-color: #444;
+    color: var(--apple-light-gray);
+}
+.bg-dark .spec-list .spec-label {
+    color: var(--apple-white);
+}
+
+/* Stile per liste annidate (es. dettagli chip) */
+.nested-spec-list {
+    list-style: disc; /* Usa bullet point per dettagli */
+    padding-left: 25px; /* Indentazione */
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.9em; /* Leggermente più piccolo */
+}
+.nested-spec-list li {
+    border-bottom: none; /* Niente bordi interni */
+    padding: 0.2rem 0;
+}
+
+/* Stile per titoli di categoria (es. Sensori) */
+.spec-category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--apple-black);
+    margin-bottom: 0.5rem;
+}
+.bg-dark .spec-category-title {
+    color: var(--apple-white);
+}
+#spec-sensors p { /* Paragrafi sotto i titoli categoria */
+    font-size: 0.95rem;
+    color: var(--apple-gray);
+    margin-bottom: 0.3rem;
+}
+.bg-dark #spec-sensors p {
+    color: var(--apple-light-gray);
+}
+
+#spec-sensors img {
+    max-width: 100%; /* Usa tutta la larghezza disponibile */
+    height: auto;
+    max-height: 500px; /* Aumenta l'altezza massima */
+    margin: 0 auto; /* Centra l'immagine */
+    display: block;
+}
+
+/* Titoli più piccoli per sezioni interne */
+.section-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--apple-black);
+}
+.bg-light .section-subtitle {
+     color: var(--apple-black);
+}
+.bg-dark .section-subtitle {
+     color: var(--apple-white);
+}
+
+/* Lista più densa per "Nella Confezione" */
+.dense-list li {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    border-bottom: none; /* Niente bordi qui */
+}
+
+/* Responsive adjustments for spec lists */
+@media (max-width: 767.98px) {
+    .spec-label {
+        display: block; /* Etichette sopra il valore su mobile */
+        min-width: 0;
+        margin-bottom: 0.2em;
+    }
+    .specs-page section {
+        padding: 3rem 0;
+    }
+    .spec-category-title {
+        margin-top: 1.5rem; /* Spazio tra categorie su mobile */
+    }
+    #spec-sensors .col-md-4:first-child .spec-category-title {
+        margin-top: 0; /* Niente spazio extra per la prima */
+    }
 }
