@@ -1,7 +1,6 @@
 :root {
     --apple-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     --fallback-font-family: 'Inter', sans-serif;
-
     --apple-black: #1d1d1f;
     --apple-white: #ffffff;
     --apple-off-white: #f5f5f7;
@@ -9,15 +8,14 @@
     --apple-light-gray: #a1a1a6;
     --apple-blue: #007aff;
     --apple-dark-gray: #333333;
-
     --nav-height: 56px;
-}
-
-html {
-    scroll-behavior: smooth; /* Abilita lo smooth scrolling */
-}
-
-body {
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
     font-family: var(--apple-font-family, var(--fallback-font-family));
     background-color: var(--apple-white);
     color: var(--apple-black);
@@ -25,189 +23,182 @@ body {
     padding-top: var(--nav-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden; /* Previene scroll orizzontale accidentale */
-}
-
-h1, h2, h3, h4, h5, h6 {
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--apple-black);
     letter-spacing: -0.01em;
-}
-
-p {
+  }
+  
+  p {
     color: var(--apple-gray);
     line-height: 1.6;
-}
-
-a {
+  }
+  
+  a {
     color: var(--apple-blue);
     text-decoration: none;
-}
-
-a:hover {
+  }
+  
+  a:hover {
     text-decoration: underline;
-}
-
-section {
-    padding: 5rem 0; /* Leggera riduzione padding */
-}
-
-.bg-light {
+  }
+  
+  section {
+    padding: 5rem 0;
+  }
+  
+  .bg-light {
     background-color: var(--apple-off-white) !important;
-}
-
-.bg-dark {
+  }
+  
+  .bg-dark {
     background-color: var(--apple-black) !important;
-}
-
-.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6 {
+  }
+  
+  .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6 {
     color: var(--apple-white);
-}
-
-.bg-dark p {
+  }
+  
+  .bg-dark p {
     color: var(--apple-light-gray);
-}
-.bg-dark .feature-text {
-     color: var(--apple-light-gray);
-}
-
-
-/* --- Navbar --- */
-.apple-nav {
+  }
+  .bg-dark .feature-text {
+    color: var(--apple-light-gray);
+  }
+  
+  .apple-nav {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     height: var(--nav-height);
-    z-index: 1030; /* Assicura sia sopra altri elementi */
-}
-
-.apple-nav.scrolled {
+    z-index: 1030;
+  }
+  
+  .apple-nav.scrolled {
     background-color: rgba(245, 245, 247, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-brand img {
-    height: 28px; /* Leggermente più piccolo per raffinatezza */
+  }
+  
+  .navbar-brand img {
+    height: 28px;
     width: auto;
     vertical-align: middle;
-}
-
-.navbar-nav .nav-link {
+  }
+  
+  .navbar-nav .nav-link {
     color: var(--apple-black);
     font-weight: 400;
-    font-size: 0.85rem; /* Leggermente più piccolo */
+    font-size: 0.85rem;
     padding: 0.5rem 0.8rem;
     transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
     color: var(--apple-blue);
-}
-
-.navbar-toggler {
+  }
+  
+  .navbar-toggler {
     border: none;
     padding: 0.25rem 0.5rem;
-}
-.navbar-toggler:focus {
+  }
+  .navbar-toggler:focus {
     box-shadow: none;
-}
-.navbar-toggler-icon {
-     width: 1.2em; /* Icona leggermente più piccola */
-     height: 1.2em;
-}
-
-
-/* --- Hero Section --- */
-.hero-section {
-    min-height: calc(90vh - var(--nav-height)); /* Altezza leggermente ridotta */
+  }
+  .navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+  
+  .hero-section {
+    min-height: calc(90vh - var(--nav-height));
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 3rem;
     padding-bottom: 4rem;
     color: var(--apple-black);
-}
-
-.hero-title {
+  }
+  
+  .hero-title {
     font-size: 3.8rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--apple-black);
-}
-
-.hero-subtitle {
+  }
+  
+  .hero-subtitle {
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--apple-gray);
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.hero-image-container {
+  }
+  
+  .hero-image-container {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.hero-image {
-    max-width: 800px; /* Aumenta la larghezza massima */
+  }
+  
+  .hero-image {
+    max-width: 800px;
     height: auto;
     border-radius: 18px;
-    margin: 0 auto; /* Centra l'immagine */
-    padding: 0;
-}
-
-
-/* --- Bottoni Stile Apple --- */
-.btn-apple-primary, .btn-apple-secondary {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .btn-apple-primary, .btn-apple-secondary {
     border-radius: 980px;
-    padding: 12px 28px; /* Padding leggermente aumentato */
+    padding: 12px 28px;
     font-weight: 500;
     font-size: 1rem;
     transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease, border-color 0.2s ease;
-    display: inline-block; /* Assicura corretto allineamento e padding */
-}
-
-.btn-apple-primary {
+    display: inline-block;
+  }
+  
+  .btn-apple-primary {
     background-color: var(--apple-blue);
     color: var(--apple-white);
-    border: 1px solid transparent; /* Bordo per coerenza dimensioni */
-}
-
-.btn-apple-primary:hover {
-    background-color: #0070d1; /* Blu Apple più scuro per hover */
+    border: 1px solid transparent;
+  }
+  
+  .btn-apple-primary:hover {
+    background-color: #0070d1;
     color: var(--apple-white);
     text-decoration: none;
     transform: scale(1.03);
-}
-
-.btn-apple-secondary {
+  }
+  
+  .btn-apple-secondary {
     background-color: var(--apple-off-white);
     color: var(--apple-blue);
     border: 1px solid var(--apple-light-gray);
-}
-
-.btn-apple-secondary:hover {
+  }
+  
+  .btn-apple-secondary:hover {
     background-color: #e8e8ed;
     border-color: var(--apple-gray);
     color: var(--apple-blue);
     text-decoration: none;
     transform: scale(1.03);
-}
-
-/* --- Stili Sezioni Generiche --- */
-.section-title {
+  }
+  
+  .section-title {
     font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     letter-spacing: -0.015em;
-}
-
-.section-text {
+  }
+  
+  .section-text {
     font-size: 1.15rem;
     font-weight: 400;
     color: var(--apple-gray);
@@ -215,317 +206,315 @@ section {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
-}
-
-.bg-dark .section-text {
+  }
+  
+  .bg-dark .section-text {
     color: var(--apple-light-gray);
-}
-
-
-/* --- Feature Cards --- */
-.feature-card {
+  }
+  
+  .feature-card {
     background-color: transparent;
     padding: 15px;
     text-align: center;
     border: none;
-}
-.feature-icon {
-    max-height: 80px; /* Altezza massima icone */
+  }
+  .feature-icon {
+    max-height: 80px;
     width: auto;
     object-fit: contain;
-}
-.feature-title {
+  }
+  .feature-title {
     font-size: 1.4rem;
     font-weight: 600;
     color: inherit;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-}
-
-.feature-text {
-    font-size: 0.95rem; /* Testo feature leggermente più piccolo */
-}
-
-
-/* --- Price Cards --- */
-.price-card {
+  }
+  
+  .feature-text {
+    font-size: 0.95rem;
+  }
+  
+  .price-card {
     background-color: var(--apple-white);
     padding: 30px 25px;
     border-radius: 18px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Assicura altezza uguale con flex */
-    display: flex; /* Abilita flexbox per allineare bottone */
-    flex-direction: column; /* Contenuto in colonna */
-}
-.price-card > div:first-child {
-     flex-grow: 1; /* Fa espandere il contenuto per spingere bottone in basso */
-}
-
-.price-card:hover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card > div:first-child {
+    flex-grow: 1;
+  }
+  
+  .price-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
-}
-
-.price-title {
+  }
+  
+  .price-title {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 8px;
-}
-.price-storage {
+  }
+  .price-storage {
     font-size: 0.95rem;
     color: var(--apple-gray);
     margin-bottom: 12px;
-}
-
-.price-tag {
+  }
+  
+  .price-tag {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--apple-black);
     margin-bottom: 25px;
-}
-.price-card .btn-apple-primary {
-    margin-top: auto; /* Spinge il bottone in fondo alla card */
-}
-
-/* --- Footer --- */
-.apple-footer {
+  }
+  .price-card .btn-apple-primary {
+    margin-top: auto;
+  }
+  
+  .apple-footer {
     background-color: var(--apple-off-white);
     color: var(--apple-gray);
-    font-size: 0.78rem; /* Testo footer più piccolo */
+    font-size: 0.78rem;
     border-top: 1px solid #ddd;
-}
-
-.footer-text {
+    padding: 2rem 0;
+  }
+  
+  .footer-text {
     margin-bottom: 0.8rem;
     color: var(--apple-black);
     font-weight: 500;
-}
-
-.footer-links {
+  }
+  
+  .footer-links {
     padding-left: 0;
     margin-bottom: 0;
-}
-
-.footer-links li {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    display: inline-block;
     margin: 0 8px;
-}
-
-.footer-links a {
+  }
+  
+  .footer-links a {
     color: var(--apple-gray);
     font-weight: 400;
-}
-
-.footer-links a:hover {
+  }
+  
+  .footer-links a:hover {
     color: var(--apple-blue);
     text-decoration: underline;
-}
-
-
-/* --- Animazioni su Scroll --- */
-.reveal {
+  }
+  
+  .reveal {
     opacity: 0;
     transform: translateY(35px);
     transition: opacity 0.9s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.9s cubic-bezier(0.215, 0.610, 0.355, 1);
-    will-change: opacity, transform; /* Hint per performance */
-}
-
-.reveal.reveal-visible {
+    will-change: opacity, transform;
+  }
+  
+  .reveal.reveal-visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+  }
+  
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  
+  @media (max-width: 991.98px) {
     .hero-title { font-size: 3rem; }
     .hero-subtitle { font-size: 1.4rem; }
     .section-title { font-size: 2.2rem; }
     .section-text { font-size: 1.1rem; }
     section { padding: 4rem 0; }
     .navbar-collapse {
-        position: absolute;
-        top: var(--nav-height);
-        left: 0;
-        width: 100%;
-        background-color: var(--apple-off-white);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0; /* Padding interno per menu mobile */
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      width: 100%;
+      background-color: var(--apple-off-white);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
     }
-     .navbar-nav {
-        text-align: center;
-     }
-     .navbar-nav .nav-item {
-        margin-bottom: 0.5rem; /* Spazio tra link mobile */
-     }
-     .navbar-nav.ms-auto { /* Rimuovi margine auto su mobile */
-         margin-left: auto !important;
-         margin-right: auto !important;
-         margin-top: 1rem; /* Spazio prima del bottone Supporto */
-     }
-}
-
-@media (max-width: 767.98px) { /* Bootstrap md breakpoint */
+    .navbar-nav {
+      text-align: center;
+    }
+    .navbar-nav .nav-item {
+      margin-bottom: 0.5rem;
+    }
+    .navbar-nav.ms-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
     body { padding-top: var(--nav-height); }
     .hero-title { font-size: 2.4rem; letter-spacing: -0.01em;}
     .hero-subtitle { font-size: 1.15rem; }
     .section-title { font-size: 1.9rem; }
     .section-text { font-size: 1rem; }
     .feature-card, .price-card {
-        margin-bottom: 25px;
+      margin-bottom: 25px;
     }
     .hero-cta .btn {
-        display: block;
-        margin-bottom: 15px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 280px;
-        width: 80%; /* Larghezza maggiore su mobile */
+      display: block;
+      margin-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 280px;
+      width: 80%;
     }
     .hero-cta .btn-lg.me-md-2 {
-        margin-right: auto !important;
+      margin-right: auto !important;
     }
     .price-card {
-        padding: 25px 20px;
+      padding: 25px 20px;
     }
     .footer-links li {
-        display: block; /* Link footer uno sotto l'altro */
-        margin-bottom: 5px;
+      display: block;
+      margin-bottom: 5px;
     }
-}
-
-/* --- Stili Pagina Specifiche --- */
-
-.specs-page .specs-hero {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.specs-page .specs-hero h1 {
-    color: var(--apple-black); /* Assicurati che sia nero su sfondo chiaro */
-}
-
-.specs-page section {
-    padding: 4rem 0; /* Padding leggermente ridotto per le sezioni spec */
-}
-
-/* Stile per le liste di specifiche */
-.spec-list {
+  }
+  
+  .specs-page .specs-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .specs-page .specs-hero .hero-image-container {
+    margin-top: 1.5rem;
+  }
+  
+  .specs-page .specs-hero h1 {
+    color: var(--apple-black);
+  }
+  
+  .specs-page section {
+    padding: 4rem 0;
+  }
+  
+  .spec-list {
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none; /* Rimuovi bullet point */
-}
-
-.spec-list li {
+    list-style: none;
+  }
+  
+  .spec-list li {
     padding: 0.6rem 0;
-    border-bottom: 1px solid #e8e8ed; /* Sottile divisore */
+    border-bottom: 1px solid #e8e8ed;
     font-size: 1rem;
     color: var(--apple-gray);
-}
-
-.spec-list li:last-child {
-    border-bottom: none; /* Rimuovi bordo dall'ultimo elemento */
-}
-
-.spec-label {
-    font-weight: 600; /* Semibold per l'etichetta */
+  }
+  
+  .spec-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .spec-label {
+    font-weight: 600;
     color: var(--apple-black);
     margin-right: 0.5em;
-    display: inline-block; /* Permette margine */
-    min-width: 120px; /* Larghezza minima per allineamento (opzionale) */
-}
-
-.bg-light .spec-list li {
-    border-color: #dcdcdc; /* Bordo leggermente più visibile su bg-light */
-}
-
-.bg-dark .spec-list li { /* Se usi sezioni scure per le spec */
+    display: inline-block;
+    min-width: 120px;
+  }
+  
+  .bg-light .spec-list li {
+    border-color: #dcdcdc;
+  }
+  
+  .bg-dark .spec-list li {
     border-color: #444;
     color: var(--apple-light-gray);
-}
-.bg-dark .spec-list .spec-label {
+  }
+  .bg-dark .spec-list .spec-label {
     color: var(--apple-white);
-}
-
-/* Stile per liste annidate (es. dettagli chip) */
-.nested-spec-list {
-    list-style: disc; /* Usa bullet point per dettagli */
-    padding-left: 25px; /* Indentazione */
+  }
+  
+  .nested-spec-list {
+    list-style: disc;
+    padding-left: 25px;
     margin-top: 0.5rem;
     margin-bottom: 0;
-    font-size: 0.9em; /* Leggermente più piccolo */
-}
-.nested-spec-list li {
-    border-bottom: none; /* Niente bordi interni */
+    font-size: 0.9em;
+  }
+  .nested-spec-list li {
+    border-bottom: none;
     padding: 0.2rem 0;
-}
-
-/* Stile per titoli di categoria (es. Sensori) */
-.spec-category-title {
+  }
+  
+  .spec-category-title {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--apple-black);
     margin-bottom: 0.5rem;
-}
-.bg-dark .spec-category-title {
+  }
+  .bg-dark .spec-category-title {
     color: var(--apple-white);
-}
-#spec-sensors p { /* Paragrafi sotto i titoli categoria */
+  }
+  
+  #spec-sensors p {
     font-size: 0.95rem;
     color: var(--apple-gray);
     margin-bottom: 0.3rem;
-}
-.bg-dark #spec-sensors p {
+  }
+  .bg-dark #spec-sensors p {
     color: var(--apple-light-gray);
-}
-
-#spec-sensors img {
-    max-width: 100%; /* Usa tutta la larghezza disponibile */
+  }
+  
+  #spec-sensors > .container > .section-title {
+    margin-bottom: 2.5rem;
+  }
+  
+  #spec-sensors img {
+    max-width: 700px;
     height: auto;
-    max-height: 500px; /* Aumenta l'altezza massima */
-    margin: 0 auto; /* Centra l'immagine */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
     display: block;
-}
-
-/* Titoli più piccoli per sezioni interne */
-.section-subtitle {
+    border-radius: 12px;
+  }
+  
+  .section-subtitle {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--apple-black);
-}
-.bg-light .section-subtitle {
-     color: var(--apple-black);
-}
-.bg-dark .section-subtitle {
-     color: var(--apple-white);
-}
-
-/* Lista più densa per "Nella Confezione" */
-.dense-list li {
+    margin-bottom: 1.5rem;
+  }
+  .bg-light .section-subtitle {
+    color: var(--apple-black);
+  }
+  .bg-dark .section-subtitle {
+    color: var(--apple-white);
+  }
+  
+  .dense-list li {
     padding: 0.3rem 0;
     font-size: 0.9rem;
-    border-bottom: none; /* Niente bordi qui */
-}
-
-/* Responsive adjustments for spec lists */
-@media (max-width: 767.98px) {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 767.98px) {
     .spec-label {
-        display: block; /* Etichette sopra il valore su mobile */
-        min-width: 0;
-        margin-bottom: 0.2em;
+      display: block;
+      min-width: 0;
+      margin-bottom: 0.2em;
     }
     .specs-page section {
-        padding: 3rem 0;
+      padding: 3rem 0;
     }
     .spec-category-title {
-        margin-top: 1.5rem; /* Spazio tra categorie su mobile */
+      margin-top: 1.5rem;
     }
     #spec-sensors .col-md-4:first-child .spec-category-title {
-        margin-top: 0; /* Niente spazio extra per la prima */
+      margin-top: 0;
     }
-}
+  }

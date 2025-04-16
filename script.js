@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector('.apple-nav');
     if (navbar) {
         const addScrolledClass = () => {
-            if (window.scrollY > 30) { // Attiva effetto un po' prima
+            if (window.scrollY > 30) { 
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         };
         window.addEventListener('scroll', addScrolledClass);
-        addScrolledClass(); // Controlla subito al caricamento
+        addScrolledClass();
     }
 
     const revealElements = document.querySelectorAll('.reveal');
@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('reveal-visible');
                 } else {
-                    // Opzionale: rimuovi per far ripartire l'animazione se esce e rientra
-                    // entry.target.classList.remove('reveal-visible');
                 }
             });
         };
@@ -43,29 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Smooth scroll per i link interni (opzionale, ma carino)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            // Controlla se è solo un # o un link a un elemento esistente
             if (targetId.length > 1 && document.querySelector(targetId)) {
-                 e.preventDefault(); // Previene il salto immediato solo se è un link interno valido
+                 e.preventDefault();
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
-                 // Chiudi la navbar se è aperta su mobile dopo il click
                  const navbarCollapse = document.querySelector('.navbar-collapse.show');
                  if(navbarCollapse) {
                       const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                         toggle: false // Evita di riaprirla/richiuderla se clicchi di nuovo
+                         toggle: false 
                       });
                       bsCollapse.hide();
                  }
             } else if (targetId === '#') {
-                 e.preventDefault(); // Previene il salto se è solo "#"
-                 window.scrollTo({ top: 0, behavior: 'smooth'}); // Torna su
+                 e.preventDefault();
+                 window.scrollTo({ top: 0, behavior: 'smooth'});
             }
-            // Non fare preventDefault se non è un link interno (es. link a supporto)
         });
     });
 
